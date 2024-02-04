@@ -31,8 +31,8 @@ const ProfileScreen = ({ navigation }) => {
               setIsOpen(!isOpen);
             }}>
             <View className="flex-row justify-start gap-x-4 items-center ">
-              <FontAwesome6 name="door-closed" size={24} color={"green"} />
-              <Text className="font-medium text-green-500">Close</Text>
+              <FontAwesome6 name="door-closed" size={24} color={"red"} />
+              <Text className="font-medium text-red-500">Close</Text>
             </View>
           </TouchableOpacity>
         ) : (

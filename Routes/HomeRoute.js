@@ -16,6 +16,7 @@ import FontAwesome from "@expo/vector-icons/FontAwesome";
 import Home from "../Screens/Home";
 import ProfileScreen from "../Screens/ProfileScreen";
 import ProfileRoute from "./ProfileRoute";
+import Appointments from "../Screens/Appointments";
 
 const CustomTitleComponent = () => {
   return (
@@ -122,13 +123,13 @@ const HomeRoute = ({ navigate }) => {
         }}
       />
       <Tab.Screen
-        name="sell"
-        component={Home}
+        name="appointment"
+        component={Appointments}
         options={{
-          title: "Grow Your Agro Products",
+          headerTitle: (props) => <CustomTitleComponent {...props} />,
           headerTitleAlign: "left",
           headerStyle: {
-            backgroundColor: "green",
+            backgroundColor: "#5d1425",
           },
           headerTintColor: "#fff",
           textAlign: "left",
