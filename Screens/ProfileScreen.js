@@ -85,8 +85,8 @@ const ProfileScreen = ({ navigation }) => {
 
         <TouchableOpacity className="flex-row justify-between mb-8">
           <View className="flex-row justify-start gap-x-4 items-center ">
-            <MaterialCommunityIcons name="lock" size={24} color={"gray"} />
-            <Text className="font-medium text-gray-600">Change Password</Text>
+            <MaterialCommunityIcons name="history" size={24} color={"gray"} />
+            <Text className="font-medium text-gray-600">History</Text>
           </View>
           <FontAwesome6 name="arrow-right" size={20} color={"gray"} />
         </TouchableOpacity>

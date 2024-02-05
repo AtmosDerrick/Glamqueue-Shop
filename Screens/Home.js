@@ -6,6 +6,7 @@ import {
   FlatList,
   TouchableOpacity,
   Image,
+  ScrollView,
 } from "react-native";
 import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
 import Fontisto from "react-native-vector-icons/Fontisto";
@@ -124,7 +125,7 @@ const Home = () => {
   );
 
   return (
-    <View className="">
+    <ScrollView className=" ">
       <View className=" mb-1 py-1 bg-white flex-row justify-between items-center px-4">
         <View className="  bg-white">
           <Image source={img1} className="h-16 w-16" />
@@ -184,7 +185,7 @@ const Home = () => {
         renderItem={renderUserItem}
         keyExtractor={(item) => item.id.toString()}
       />
-    </View>
+    </ScrollView>
   );
 };
 

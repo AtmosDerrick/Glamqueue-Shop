@@ -51,36 +51,26 @@ const HomeRoute = ({ navigate }) => {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
-        headerShadowVisible: false, // applied here
-        headerBackTitleVisible: false,
-        tabBarStyle: {
+        headerTitle: "GlamQueue",
+        headerTitleAlign: "center",
+        headerStyle: {
           backgroundColor: "#5d1425",
         },
-        activeTintColor: "green", // Change the color when the tab is active
-        inactiveTintColor: "gray", // Change the color when the tab is inactive
-        tabBarIcon: ({ color, size }) => {
-          let iconComponent;
-
-          if (route.name === "home") {
-            iconComponent = <Entypo name="menu" size={24} color={color} />;
-          } else if (route.name === "sell") {
-            iconComponent = <Fontisto name="date" size={24} color={color} />;
-          } else if (route.name === "media") {
-            iconComponent = (
-              <MaterialCommunityIcons
-                name="advertisements"
-                size={24}
-                color={color}
-              />
-            );
-          } else if (route.name === "Experts") {
-            iconComponent = (
-              <FontAwesome name="user-circle-o" size={24} color={color} />
-            );
-          }
-
-          return iconComponent;
+        headerTintColor: "#fff",
+        textAlign: "left",
+        headerTitleStyle: {
+          fontWeight: "bold",
         },
+        tabBarShowLabel: false,
+        tabBarHideOnKeyboard: true,
+        tabBarStyle: {
+          elevation: 5,
+          backgroundColor: "#5d1425",
+
+          height: 90,
+        },
+        tabBarShowLabel: false,
+        headerShown: true,
       })}>
       <Tab.Screen
         name="home"
@@ -164,48 +154,50 @@ const HomeRoute = ({ navigate }) => {
           ),
         }}
       />
-      <Tab.Screen
-        name="media"
-        component={Home}
-        options={{
-          title: "Share your Ideas",
-          headerTitleAlign: "left",
-          headerStyle: {
-            backgroundColor: "green",
-          },
-          headerTintColor: "#fff",
-          textAlign: "left",
-          headerTitleStyle: {
-            fontWeight: "bold",
-          },
-          tabBarLabel: () => null,
-          tabBarShowLabel: false,
-          tabBarBadge: 2,
-          tabBarIcon: ({ focused }) => (
-            <View
-              style={{
-                top: Platform.OS === "ios" ? 10 : 0,
-              }}>
-              <View
-                style={[
-                  {
-                    padding: 3,
-                    borderRadius: 12,
-                    borderWidth: 2,
-                    borderColor: focused ? "white" : "transparent",
-                  },
-                  focused ? {} : { borderWidth: 0 }, // If not focused, remove the border
-                ]}>
-                <MaterialCommunityIcons
-                  name="advertisements"
-                  size={24}
-                  color={focused ? "white" : "#cacaca"}
-                />
-              </View>
-            </View>
-          ),
-        }}
-      />
+      {
+        // <Tab.Screen
+        // name="media"
+        // component={Home}
+        // options={{
+        //   title: "Share your Ideas",
+        //   headerTitleAlign: "left",
+        //   headerStyle: {
+        //     backgroundColor: "green",
+        //   },
+        //   headerTintColor: "#fff",
+        //   textAlign: "left",
+        //   headerTitleStyle: {
+        //     fontWeight: "bold",
+        //   },
+        //   tabBarLabel: () => null,
+        //   tabBarShowLabel: false,
+        //   tabBarBadge: 2,
+        //   tabBarIcon: ({ focused }) => (
+        //     <View
+        //       style={{
+        //         top: Platform.OS === "ios" ? 10 : 0,
+        //       }}>
+        //       <View
+        //         style={[
+        //           {
+        //             padding: 3,
+        //             borderRadius: 12,
+        //             borderWidth: 2,
+        //             borderColor: focused ? "white" : "transparent",
+        //           },
+        //           focused ? {} : { borderWidth: 0 }, // If not focused, remove the border
+        //         ]}>
+        //         <MaterialCommunityIcons
+        //           name="advertisements"
+        //           size={24}
+        //           color={focused ? "white" : "#cacaca"}
+        //         />
+        //       </View>
+        //     </View>
+        //   ),
+        // }}
+        // />
+      }
       <Tab.Screen
         name="Experts"
         component={ProfileRoute}

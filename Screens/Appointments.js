@@ -142,6 +142,9 @@ const Appointments = () => {
 
   return (
     <ScrollView className="bg-white h-full">
+      {
+        //Appointment model
+      }
       <Modal
         animationType="slide"
         transparent={true}
